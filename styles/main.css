@@ -1,0 +1,20 @@
+.criminals {
+    flex-basis: 30%;
+    border: 1px solid rgba(36, 29, 30, 0.89);
+    padding: 1em;
+    margin-bottom: 10px;
+}
+.criminalsContainer{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.criminals__name{
+    font-weight: bold;
+
+
+}
+
+
