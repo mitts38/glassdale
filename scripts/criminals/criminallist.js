@@ -1,51 +1,68 @@
+import { CriminalComponent } from "./Criminal.js";
+import { useCriminals } from "./CriminalDataProvider.js";
 
-import criminalsComponent from "./criminal.js"
-import { useCriminals } from "./criminaldataprovider.js"
+const eventHub = document.querySelector("#mainContainer")
+const criminalHTML = document.querySelector(".criminalsContainer")
 
-const eventHub = document.querySelector(".container")
+const CriminalListComponent = () => {
+  // Load the application state to be used by this component
+  const appStateCriminals = useCriminals()
 
- const criminalslistComponent = () => {
-     console.log("This is the criminal list componenet")
-     const contentElement = document.querySelector(".criminalsContainer")
-    const criminals = useCriminals()
-
-
-    eventHub.addEventListener("crimeSelected", event => {
-         const crimeName = event.detail.crime 
-         const filteredCriminals = criminals.filter(
-             (indivisualcriminal)=>{
-                 if(indivisualcriminal.conviction === crimeName){
-                     return indivisualcriminal
-                 }
-
-             }
-         ) 
-         render(filteredCriminals)  
-     
-     
-    })
-
-
-
-
-
-// Add to the existing HTML in the content element
-let render = criminals => {
-    contentElement.innerHTML = `
-      ${
-
-        criminals.map(
-            (criminal) => {
-                return criminalsComponent(criminal)
-
-            }
-        ).join("")
+  // What should happen when detective selects a crime?
+  eventHub.addEventListener("filterClicked", event => {
+    //  remembered to add the id of the crime to the event detail, 
+    const crimeId = event.detail.crime
+    const officerName = event.detail.officer
+    
+      //  Filter to criminals application 
+    
+    const matchingCriminals = appStateCriminals.filter(
+      (criminal) => {
+        if (criminal.conviction === crimeId) {
+          return criminal
         }
-  
-    `
+      })
+      .filter(criminal => {
+        if (criminal.arrestingOfficer === officerName) {
+          return criminal
+        }
+      })
+    render(matchingCriminals)
+  })
 
+  // eventHub.addEventListener("officerSelected", event => {
+  //   const officerName = event.detail.officer
 
+  //   const OfficersCriminals = appStateCriminals.filter(
+  //     (convict) => {
+  //       if (convict.arrestingOfficer.toLowerCase() === officerName.toLowerCase()) {
+  //         return appStateCriminals
+  //       }
+  //     })
+  //   render(OfficersCriminals)
+  // })
+  /*
+      Then invoke render() and pass the filtered collection as
+      an argument
+  */
+  eventHub.addEventListener("click", e => {
+    if (e.target.id === "showAllCriminals") {
+      render(appStateCriminals)
+    }
+  })
+
+  const render = crimeCollection => {
+    criminalHTML.innerHTML = `
+      ${
+      crimeCollection.map(
+        (criminal) => {
+          return CriminalComponent(criminal)
+        }
+      ).join("")
+      }`
+  }
+  render(appStateCriminals)
 }
-render(criminals)
- }
-export default criminalslistComponent
+
+export default CriminalListComponent
+

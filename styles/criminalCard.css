@@ -1,0 +1,40 @@
+.criminalsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+  
+  .criminalCard {
+    border: 1px solid black;
+    flex-basis: 30%;
+    margin-bottom: 10px;
+    padding: 0px 5px 10px 10px;
+    border-radius: 7px;
+    box-shadow: 5px 8px 10px #000000
+  }
+  
+  .criminalName {
+    font-weight: bold;
+    margin: 0px -5px -3px -10px;
+    background-color: rgb(215, 218, 32);
+    text-align: center;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding: 4px 0px;
+    background-clip: border-box;
+  }
+  
+  .criminalCrime {
+    text-transform: capitalize;
+  }
+  
+  hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+  
+  .dialog--criminal {
+    border-color: goldenrod;
+  }

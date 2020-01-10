@@ -1,0 +1,29 @@
+.dropdown {
+    margin: 0px auto 10px auto;
+    flex-basis: 25%;
+  }
+  
+  .filters__crime {
+    display: flex;
+  }
+  
+  .conviction {
+    text-transform: capitalize;
+  }
+  
+  .filters__officer {
+    display: flex;
+  }
+  
+  #or {
+    text-align: center;
+    margin: -10px auto 5px auto;
+  }
+  
+  .filterForm {
+    text-align: center;
+  }
+  
+  #filterCrimeAndOfficer {
+    margin-bottom: 10px;
+  }

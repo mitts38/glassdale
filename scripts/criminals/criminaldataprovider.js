@@ -1,25 +1,16 @@
 let criminals = []
 
+export const useCriminals = () => criminals.slice()
 
-
-export const useCriminals = () => {
-  return  criminals
-}
-export const getCriminals = ()=> {
- 
-    return fetch ("http://criminals.glassdale.us/criminals")
-    
-    .then(response => response.json()
-    )
+export const getCriminals = () => {
+  console.log("*****I FOR SURE HAVE THAT CRIMINALS DATA*****")
+  return fetch("http://criminals.glassdale.us/criminals")
+    .then(response => response.json())
     .then(
-
-        parsedCriminal =>{
-            console.log(" I have data")
-            criminals = parsedCriminal.slice()
-        }
+      parsedCriminals => {
+        // console.table(parsedCriminals)
+        criminals = parsedCriminals.slice()
+        console.log("*****I FOR SURE HAVE THAT CRIMINALS DATA*****")
+      }
     )
-    /*
-        Load database state into application state with a fetch().
-        Make sure the last then() updates the criminals array
-    */
 }

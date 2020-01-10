@@ -1,18 +1,15 @@
 let officers = []
 
- export const useOfficers = () => {
-    return officers
+export const useOfficers = () => {
+    return officers.slice()
 }
 
 export const getOfficers = () => {
-    return fetch("http://criminals.glassdale.us/criminals",{
-    method: "get"
-})
+    return fetch("http://criminals.glassdale.us/officers")
         .then(response => response.json())
         .then(
-            parsedcriminals => {
-                console.table(parsedcriminals)
-                officers = parsedOfficers.slice()
+            parsedOfficers => {
+                officers = parsedOfficers
             }
         )
 }

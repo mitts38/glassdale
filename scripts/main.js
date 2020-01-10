@@ -1,24 +1,32 @@
-// main.js
-import { getCriminals } from "./criminals/criminaldataprovider.js"
-import criminalslistComponent from "./criminals/criminallist.js"
-import {getConviction} from "./conviction/ConvictionProvider.js"
-import ConvictionSelect from "./conviction/convictionSelect.js"
-getCriminals().then(
-    
-    () => criminalslistComponent()
-)
-    /*
-        Now that you have the data, what
-        component should be rendered?
-    */
-getConviction().then(
-    () => ConvictionSelect()
-)
+import { getCriminals } from "./criminals/CriminalDataProvider.js";
+import CriminalListComponent from "./criminals/CriminalList.js";
+import { getConvictions } from "./convictions/ConvictionProvider.js";
+import ConvictionSelect from "./convictions/ConvictionSelect.js";
+import NoteFormComponent from "./notes/NoteForm.js";
+import NoteListComponent from "./notes/NoteList.js";
+import { getNotes } from "./notes/NoteDataProvider.js";
+import WitnessListComponent from "./witnesses/witnessesList.js";
+import { getWitnesses } from "./witnesses/witnessesDataProvider.js";
+import { getOfficers } from "./officers/OfficerProvider.js";
+import OfficerSelect from "./officers/OfficerSelect.js";
+import { FilterButton } from "./filter/filter.js";
+
+NoteFormComponent()
+
+getWitnesses()
+.then(() => WitnessListComponent())
+
+getConvictions()
+.then(() => ConvictionSelect())
 
 
-    
+getCriminals()
+.then(() => CriminalListComponent())
 
-    /*
-        Now that you have the data, what
-        component should be rendered?
-    */
+getNotes()
+.then(() => NoteListComponent())
+
+getOfficers()
+.then(() => OfficerSelect())
+
+FilterButton()

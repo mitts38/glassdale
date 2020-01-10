@@ -1,0 +1,44 @@
+.suspectNoteForm {
+    margin: 0px auto 10px auto;
+    text-align: center;
+  }
+  .extraButtons {
+    margin: 0px auto 10px auto;
+    text-align: center;
+  }
+  
+  .noteContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .noteCard {
+    margin: 10px;
+    flex-basis: 20%;
+    border: 1px solid black;
+    padding: 0px 5px 10px 10px;
+    border-radius: 7px;
+    box-shadow: 5px 8px 10px #000000
+  }
+  
+  .noteHeader {
+    font-weight: bold;
+    margin: 0px -5px -5px -10px;
+    text-align: center;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding: 4px 0px;
+  }
+  
+  .noteText {
+    margin: 9px 0px;
+  }
+  
+  .noteDate {
+    margin: 9px 0px;
+  }
+  
+  .extraButtons {
+    margin-top: 10px;
+  }

@@ -1,24 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/main.css">
+    <meta charset="utf-8">
+    <title>Glassdale PD</title>
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
+
 <body>
-        <main class="container">
-                <header>
-                    <div class="filters">
-                        <div class="filter filters__crime"></div>
-                        <div class="filter filters__incarceration"></div>
-                        <div class="filter filters__officer"></div>
-                    </div>
-                </header>
-                <article class="criminalsContainer"></article>
-            </main>
-        
-            <script type="module" src="./scripts/main.js"></script>
-    
+
+    <main class="container" id="mainContainer">
+        <h1 class="glassdaleHeader">Glassdale</h1>
+        <header>
+            <div class="filters">
+                <div class="filterForm">
+                    <div class="filter filters__crime"></div>
+                    <div class="filter filters__officer"></div>
+                    <div class="filter__button"></div>
+                </div>
+                <div class="filter filters__incarceration"></div>
+            </div>
+        </header>
+        <article class="noteFormContainer"></article>
+        <div class="extraButtonContainer"></div>
+        <div class="editNoteContainer"></div>
+        <div class="noteContainer"></div>
+        <article class="criminalsContainer"></article>
+    </main>
+
+    <script type="module" src="./scripts/main.js"></script>
 </body>
+
 </html>

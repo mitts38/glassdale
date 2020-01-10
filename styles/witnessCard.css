@@ -1,0 +1,27 @@
+.criminalsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.witnessCard {
+  border: 1px solid black;
+  flex-basis: 30%;
+  margin-bottom: 10px;
+  padding: 0px 5px 10px 10px;
+  border-radius: 7px;
+  box-shadow: 5px 8px 10px #000000;
+  background-clip: border-box;
+}
+
+.witnessName {
+  font-weight: bold;
+  margin: 0px -5px -3px -10px;
+  background-color: rgb(174, 201, 207);
+  text-align: center;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  padding: 4px 0px;
+  background-clip: border-box;
+}
